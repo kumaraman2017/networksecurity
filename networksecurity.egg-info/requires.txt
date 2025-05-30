@@ -3,3 +3,4 @@ pandas
 numpy
 certifi
 pymongo
+pymongo[srv]==4.6.3

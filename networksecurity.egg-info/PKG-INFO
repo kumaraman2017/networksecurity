@@ -8,3 +8,4 @@ Requires-Dist: pandas
 Requires-Dist: numpy
 Requires-Dist: certifi
 Requires-Dist: pymongo
+Requires-Dist: pymongo[srv]==4.6.3
