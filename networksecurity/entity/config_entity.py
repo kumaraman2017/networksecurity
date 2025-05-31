@@ -14,25 +14,38 @@ class TrainingPipelineConfig:
         self.artifact_dir=os.path.join(self.artifact_name,timestamp)
         self.timestamp: str=timestamp
 
+import os
+from networksecurity.constants.training_pipeline import (
+    DATA_INGESTION_DIR_NAME,
+    DATA_INGESTION_FEATURE_STORE_DIR,
+    DATA_INGESTION_INGESTED_DIR,
+    FILE_NAME,
+    TRAIN_FILE_NAME,
+    TEST_FILE_NAME,
+    DATA_INGESTION_TRAIN_TEST_SPLIT_RATIO
+)
+
 class DataIngestionConfig:
-    def __init__(self,training_pipeline_config:TrainingPipelineConfig):
-        self.data_ingestion_dir: str = os.path.join(
-            training_pipeline_config.artifact_dir, training_pipeline.DATA_INGESTION_DIR_NAME
+    def __init__(self, artifact_dir: str, database_name: str, collection_name: str):
+        self.database_name = database_name
+        self.collection_name = collection_name
+
+        self.data_ingestion_dir = os.path.join(artifact_dir, DATA_INGESTION_DIR_NAME)
+
+        self.feature_store_file_path = os.path.join(
+            self.data_ingestion_dir, DATA_INGESTION_FEATURE_STORE_DIR, FILE_NAME
         )
-        self.feature_store_file_path: str = os.path.join(
-            self.data_ingestion_dir, training_pipeline.DATA_INGESTION_FEATURE_STORE_DIR, training_pipeline.FILE_NAME
+
+        self.training_file_path = os.path.join(
+            self.data_ingestion_dir, DATA_INGESTION_INGESTED_DIR, TRAIN_FILE_NAME
         )
-        self.train_file_path: str = os.path.join(
-            self.data_ingestion_dir, training_pipeline.DATA_INGESTION_INGESTED_DIR, training_pipeline.TRAIN_FILE_NAME
+
+        self.testing_file_path = os.path.join(
+            self.data_ingestion_dir, DATA_INGESTION_INGESTED_DIR, TEST_FILE_NAME
         )
-        self.test_file_path: str = os.path.join(
-            self.data_ingestion_dir, training_pipeline.DATA_INGESTION_INGESTED_DIR, training_pipeline.TEST_FILE_NAME
-        )
-        self.test_size: float = training_pipeline.DATA_INGESTION_TEST_SIZE
-        
-        self.train_test_split_ratio: float = training_pipeline.DATA_INGESTION_TRAIN_TEST_SPLIT_RATIO
-        self.collection_name: str = training_pipeline.DATA_INGESTION_COLLECTION_NAME
-        self.database_name: str = training_pipeline.DATA_INGESTION_DATABASE_NAME
+
+        self.train_test_split_ratio = DATA_INGESTION_TRAIN_TEST_SPLIT_RATIO
+
         
 class DataValidationConfig:
     def __init__(self, training_pipeline_config: TrainingPipelineConfig):
