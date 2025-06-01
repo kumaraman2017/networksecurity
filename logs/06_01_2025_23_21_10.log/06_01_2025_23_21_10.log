@@ -1,0 +1,24 @@
+[ 2025-06-01 23:21:15,325 ] 21 root - INFO - Initiate the data ingestion
+[ 2025-06-01 23:21:21,575 ] 65 root - INFO - Performed train test split on the dataframe
+[ 2025-06-01 23:21:21,575 ] 67 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[ 2025-06-01 23:21:21,577 ] 75 root - INFO - Exporting train and test file path.
+[ 2025-06-01 23:21:21,692 ] 84 root - INFO - Exported train and test file path.
+[ 2025-06-01 23:21:21,693 ] 23 root - INFO - Data ingestion is Completed
+[ 2025-06-01 23:21:21,734 ] 27 root - INFO - Initiate the Data Validation
+[ 2025-06-01 23:21:21,841 ] 32 root - INFO - Required number of columns:2
+[ 2025-06-01 23:21:21,841 ] 33 root - INFO - Data frame has columns:31
+[ 2025-06-01 23:21:21,841 ] 32 root - INFO - Required number of columns:2
+[ 2025-06-01 23:21:21,841 ] 33 root - INFO - Data frame has columns:31
+[ 2025-06-01 23:21:21,842 ] 43 root - INFO - Expected numerical columns:['having_IP_Address', 'URL_Length', 'Shortining_Service', 'having_At_Symbol', 'double_slash_redirecting', 'Prefix_Suffix', 'having_Sub_Domain', 'SSLfinal_State', 'Domain_registeration_length', 'Favicon', 'port', 'HTTPS_token', 'Request_URL', 'URL_of_Anchor', 'Links_in_tags', 'SFH', 'Submitting_to_email', 'Abnormal_URL', 'Redirect', 'on_mouseover', 'RightClick', 'popUpWidnow', 'Iframe', 'age_of_domain', 'DNSRecord', 'web_traffic', 'Page_Rank', 'Google_Index', 'Links_pointing_to_page', 'Statistical_report', 'Result']
+[ 2025-06-01 23:21:21,842 ] 43 root - INFO - Expected numerical columns:['having_IP_Address', 'URL_Length', 'Shortining_Service', 'having_At_Symbol', 'double_slash_redirecting', 'Prefix_Suffix', 'having_Sub_Domain', 'SSLfinal_State', 'Domain_registeration_length', 'Favicon', 'port', 'HTTPS_token', 'Request_URL', 'URL_of_Anchor', 'Links_in_tags', 'SFH', 'Submitting_to_email', 'Abnormal_URL', 'Redirect', 'on_mouseover', 'RightClick', 'popUpWidnow', 'Iframe', 'age_of_domain', 'DNSRecord', 'web_traffic', 'Page_Rank', 'Google_Index', 'Links_pointing_to_page', 'Statistical_report', 'Result']
+[ 2025-06-01 23:21:22,220 ] 29 root - INFO - Data Validation Completed
+[ 2025-06-01 23:21:22,221 ] 32 root - INFO - Data Transformation Started
+[ 2025-06-01 23:21:22,222 ] 67 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[ 2025-06-01 23:21:22,222 ] 69 root - INFO - Starting data transformation
+[ 2025-06-01 23:21:22,272 ] 51 root - INFO - Entered get_data-transformer_object method Transformation of class
+[ 2025-06-01 23:21:22,273 ] 57 root - INFO - Initialise KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[ 2025-06-01 23:21:22,299 ] 56 root - INFO - Entered the save_object method of Mainutils class
+[ 2025-06-01 23:21:22,305 ] 60 root - INFO - Exited the save_object method of MainUtils class
+[ 2025-06-01 23:21:22,306 ] 56 root - INFO - Entered the save_object method of Mainutils class
+[ 2025-06-01 23:21:22,312 ] 60 root - INFO - Exited the save_object method of MainUtils class
+[ 2025-06-01 23:21:22,314 ] 36 root - INFO - Data Transformation Completed
